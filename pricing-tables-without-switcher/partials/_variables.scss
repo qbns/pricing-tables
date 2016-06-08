@@ -1,22 +1,22 @@
 // colors
 
-$color-1: #173d50; // Nile Blue
-$color-2: #e97d68; // Apricot
-$color-3: #3aa0d1; // Shakespeare
+$color-1: #673ab7; // Nile Blue
+$color-2: #43a047; // Apricot
+$color-3: #c72de1; // Shakespeare
 $color-4: #FFFFFF; // White
 
 // fonts 
 
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'Roboto', 'Calibri', sans-serif;
 
 
 // Pricing tables
 
 $pt-number: 3; // number of pricing tables
-$pt-header-mobile-height: 80px;
+$pt-header-mobile-height: 120px;
 $pt-margin: 0.015; // distance between tables - percentage value
-$pt-features-number: 6;
-$pt-feature-mobile-width: 100px;
+$pt-features-number: 1;
+$pt-feature-mobile-width: 100%;
 
 // bouncy animation
 

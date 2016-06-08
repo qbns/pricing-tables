@@ -1,4 +1,4 @@
-@import 'bourbon'; // http://bourbon.io/
+@import '../../../../bourbon/bourbon'; // http://bourbon.io/
 
 @import '../partials/variables'; // colors, fonts etc...
 
@@ -12,32 +12,6 @@ Primary style
 
 -------------------------------- */
 
-*, *::after, *::before {
-	@include box-sizing(border-box);
-}
-
-html {
-	font-size: 62.5%;
-}
-
-html * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-body {
-	font: {
-		size: 1.6rem;
-		family: $primary-font; // variables inside partials > _variables.scss
-	}
-	color: $color-1;
-	background-color: $color-1;
-}
-
-a {
-	color: $color-2;
-	text-decoration: none;
-}
 
 /* -------------------------------- 
 
@@ -112,7 +86,7 @@ Main Components
 	}
 
 	@include MQ(M) {
-		margin: 3em 0 0;
+		margin: 0 0 0;
 		@include clearfix;
 
 		> li {
@@ -136,7 +110,7 @@ Main Components
 			}
 
 			&.cd-popular {
-				box-shadow: inset 0 0 0 3px $color-2;
+				box-shadow: inset 0 0 0 0px $color-2;
 			}
 
 			&.cd-popular::before {
@@ -211,9 +185,10 @@ Main Components
 	color: $color-4;
 
 	h2 {
-		margin-bottom: 3px;
+		margin-bottom: 0px;
 		font-weight: 700;
-		text-transform: uppercase;
+		//text-transform: uppercase;
+		color: #FFF;
 	}
 
 	.cd-popular & {
@@ -238,8 +213,8 @@ Main Components
 		}
 
 		h2 {
-			font-size: 1.8rem;
-			letter-spacing: 2px;
+			//font-size: 1.8rem;
+			//letter-spacing: 2px;
 		}
 	}
 }
@@ -302,7 +277,7 @@ Main Components
 }
 
 .cd-pricing-body {
-	overflow-x: auto;
+	//overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 
 	@include MQ(M) {
@@ -318,7 +293,7 @@ Main Components
 		width: $pt-feature-mobile-width;
 		float: left;
 		padding: 1.6em 1em;
-		font-size: 1.4rem;
+		//font-size: 1.4rem;
 		text-align: center;
 		white-space: nowrap;
 		overflow: hidden;
@@ -340,7 +315,7 @@ Main Components
 			padding: 1em;
 
 			.cd-popular & {
-				margin: 0 3px;
+				margin: 0 0px;
 			}
 
 			&:nth-of-type(2n+1) {
@@ -420,14 +395,12 @@ Main Components
 		position: static;
 		display: inline-block;
 		height: auto;
-		padding: 1.3em 3em;
+		padding: 1.2em 2.5em;
 		color: $color-4;
 		border-radius: 2px;
 		background-color: darken($color-1, 10%);
-		font-size: 1.4rem;
 		text-indent: 0;
 		text-transform: uppercase;
-		letter-spacing: 2px;
 
 		.no-touch &:hover {
 			background-color: darken($color-1, 5%);
