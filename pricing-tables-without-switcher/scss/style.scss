@@ -30,7 +30,7 @@ Main Components
 		font-size: 2.2rem;
 	}
 
-	@include MQ(M) {
+	@include MQ(L) {
 		height: 160px;
 		line-height: 280px;
 
@@ -46,13 +46,19 @@ Main Components
 	max-width: $L;
 	margin: 4em auto;
 
-	@include MQ(M) {
+	@include MQ(L) {
 		margin: 6em auto;
 
 		&.cd-full-width {
 			width: 100%;
 			max-width: none;
 		}
+	}
+}
+
+.cd-pricing-list-container {
+	@include MQ(L) {
+	    display: table;
 	}
 }
 
@@ -86,19 +92,25 @@ Main Components
 		}
 	}
 
-	@include MQ(M) {
+	@include MQ(L) {
 		margin: 0 0 0;
 		@include clearfix;
+		display: table-row;
+		border-collapse:separate;
+		border-spacing:2px;
 
 		> li {
-			@include column(1/$pt-number); // see partials > _layout.scss and partials > _variables.scss 
-		
+			@include column(1/$pt-number, none); // see partials > _layout.scss and partials > _variables.scss 
+
+			display: table-cell;
+			padding-bottom: 130px;
+
 			&::before {
 				/* separator between pricing tables - visible when number of tables > 3 */
 				content: '';
 				position: absolute;
 				z-index: 6;
-				left: -1px;
+				left: 0px;
 				@include center(y);
 				height: 50%;
 				width: 1px;
@@ -168,7 +180,7 @@ Main Components
 	}
 }
 
-@include MQ(M) {
+@include MQ(L) {
 
 	.cd-popular .cd-pricing-wrapper > li::before {
 		/* hide table separator for .cd-popular table */
@@ -185,18 +197,26 @@ Main Components
 	background-color: $color-3;
 	color: $color-4;
 
+	> i {
+		position: absolute;
+		right: 10px;
+		top: 22px;
+		font-size: 48px;
+	}
+
 	h2 {
 		margin-bottom: 0px;
 		font-weight: 700;
 		//text-transform: uppercase;
-		color: #FFF;
+		color: darken($color-4, 15%);
+		font-size: 20px;
 	}
 
 	.cd-popular & {
 		background-color: $color-2;
 	} 
 
-	@include MQ(M) {
+	@include MQ(L) {
 		height: auto;
 		padding: 1.9em 0.9em 1.6em;
 		pointer-events: auto;
@@ -211,6 +231,10 @@ Main Components
 
 		.cd-secondary-theme & {
 			color: $color-4;
+		}
+
+		> i {
+			display: none;
 		}
 
 		h2 {
@@ -241,7 +265,7 @@ Main Components
 	}
 }
 
-@include MQ(M) {
+@include MQ(L) {
 	
 	.cd-value {
 		font-size: 5rem;
@@ -281,7 +305,7 @@ Main Components
 	//overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 
-	@include MQ(M) {
+	@include MQ(L) {
 		overflow-x: visible;
 	}
 }
@@ -296,9 +320,6 @@ Main Components
 		padding: 1.6em 1em;
 		//font-size: 1.4rem;
 		text-align: center;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
 	}
 
 	em {
@@ -307,13 +328,14 @@ Main Components
 		font-weight: 600;
 	}
 
-	@include MQ(M) {
-		width: auto;
+	@include MQ(L) {
+		display: table;
 
 		li {
 			float: none;
 			width: auto;
 			padding: 1em;
+			display: table-row;
 
 			.cd-popular & {
 				margin: 0 0px;
@@ -321,6 +343,12 @@ Main Components
 
 			&:nth-of-type(2n+1) {
 				background-color: rgba($color-1, .06);
+			}
+
+			> div {
+				display: table-cell;
+				height: 90px;
+				vertical-align: middle;
 			}
 		}
 
@@ -353,6 +381,8 @@ Main Components
 	height: $pt-header-mobile-height;
 	width: 100%;
 
+
+
 	&::after {
 		/* right arrow visible on mobile */
 		content: '';
@@ -364,8 +394,9 @@ Main Components
 		background: url(../img/cd-icon-small-arrow.svg);
 	}
 
-	@include MQ(M) {
-		position: relative;
+	@include MQ(L) {
+		position: absolute;
+		top: 520px;
 		height: auto;
 		padding: 1.8em 0;
 		text-align: center;
@@ -392,7 +423,7 @@ Main Components
 	white-space: nowrap;
 	color: transparent;
 
-	@include MQ(M) {
+	@include MQ(L) {
 		position: static;
 		display: inline-block;
 		height: auto;
